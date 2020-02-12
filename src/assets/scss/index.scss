@@ -1,0 +1,15 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-style-regular;
+}
+
+p {
+  color: map_get($colors, accent-warning);
+}
+

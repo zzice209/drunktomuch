@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DrawerGroup from "./app/routers/drawer/DrawerGroup";
+import HomePage from "./app/components/HomePage";
+import FeaturePage from "./app/components/FeaturePage";
+import {
+    Switch,
+    Route, BrowserRouter as Router,
+} from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Switch>
+                    <Route exact path="/homepage" component={HomePage}/>
+                    <Route path="/features" component={FeaturePage}/>
+                </Switch>
+                <DrawerGroup/>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
