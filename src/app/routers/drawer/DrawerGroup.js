@@ -19,6 +19,7 @@ import {
 } from 'react-router-dom';
 import FeaturePage from '../../components/FeaturePage';
 import HomePage from '../../components/HomePage';
+import Routine from '../../components/Routine';
 
 
 const drawerWidth = 240;
@@ -149,6 +150,9 @@ const DrawerGroup = () => {
                         </Route>
                         <Route path="/features">
                             <FeaturePage/>
+                        </Route>
+                        <Route path="/routine">
+                            <Routine/>
                         </Route>
                     </Switch>
                 </main>
