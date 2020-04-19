@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export default function FeaturePage() {
-    return (
-        <div>FeaturePage</div>
-    )
+  return <div>FeaturePage</div>;
 }

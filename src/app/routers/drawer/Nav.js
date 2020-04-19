@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import AcUnitIcon from '@material-ui/icons/AcUnit';
+import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import MailIcon from '@material-ui/icons/Mail';
@@ -18,7 +19,6 @@ const Nav = () => {
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <Link to={RouterApp.features} key={text}>
                         <ListItem button>
-                            {/*{icon && <ListItemIcon className="iconInfo">{icon}</ListItemIcon>}*/}
                             <ListItemIcon>{index % 2 === 0 ? <AcUnitIcon/> : <MailIcon/>}</ListItemIcon>
                             <ListItemText primary={text}/>
                         </ListItem>
@@ -35,6 +35,16 @@ const Nav = () => {
                         </ListItem>
                     </Link>
                 ))}
+            </List>
+            <List>
+                <Link to={RouterApp.routine}>
+                    <ListItem button>
+                        <ListItemIcon>
+                            <AccessAlarmsIcon />
+                        </ListItemIcon>
+                        <ListItemText>Routine</ListItemText>
+                    </ListItem>
+                </Link>
             </List>
         </>
     )
