@@ -1,7 +1,14 @@
 import React, { useState } from "react";
-import { Dialog, FormControl } from "@material-ui/core";
+import { Dialog } from "@material-ui/core";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import FormModal from "./comp/FormModal";
+import showResults from "./comp/showResults";
+
+import "./style.scss";
+
 // import { Field, reduxForm } from 'redux-form';
 
 function Routine() {
@@ -28,15 +35,13 @@ function Routine() {
           className="dialogChangePass"
         >
           <DialogTitle id="modal-change-pass">Set backup account</DialogTitle>
-          <form className="changePasswordFrm">
-            <FormControl margin="normal" required fullWidth>
-
-            </FormControl>
-          </form>
+          <DialogContent className="dialog-content">
+            <FormModal onSubmit={showResults}></FormModal>
+          </DialogContent>
         </Dialog>
       </div>
     </div>
   );
-};
+}
 
 export default Routine;
