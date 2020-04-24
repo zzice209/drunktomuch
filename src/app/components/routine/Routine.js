@@ -3,7 +3,6 @@ import { Dialog } from "@material-ui/core";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Button from "@material-ui/core/Button";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
 import FormModal from "./comp/FormModal";
 import showResults from "./comp/showResults";
 
