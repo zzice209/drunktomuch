@@ -23,6 +23,25 @@ const renderField = ({
   </div>
 );
 
+const createRenderer = (render) => ({ input, meta, label, ...rest }) => (
+  <div
+    className={[
+      meta.error && meta.touched ? "error" : "",
+      meta.active ? "active" : "",
+    ].join(" ")}
+  >
+    <label>{label}</label>
+    {render(input, label, rest)}
+    {meta.error && meta.touched && <span>{meta.error}</span>}
+  </div>
+);
+
+const RenderInput = createRenderer((input, label) => (
+  <div>
+    <input {...input} placeholder={label} />
+  </div>
+));
+
 // const renderSelect = ({
 //   input,
 //   value,
@@ -39,6 +58,7 @@ const FormModal = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
     <form onSubmit={handleSubmit}>
+      <Field name="firstName" label="First Name" component={RenderInput} />
       <Field
         name="username"
         type="text"
@@ -48,10 +68,10 @@ const FormModal = (props) => {
       <Field name="email" type="email" component={renderField} label="Email" />
       <Field name="age" type="number" component={renderField} label="Age" />
       {/* <Field name="sex" type="radio" value="male" component={renderSelect} />
-      ABC
+      male
       <Field name="sex" type="radio" value="female" component={renderSelect} />
-      ABCD */}
-      <div>
+      female */}
+      {/* <div>
         <label>Sex</label>
         <div>
           <label>
@@ -63,7 +83,7 @@ const FormModal = (props) => {
             Female
           </label>
         </div>
-      </div>
+      </div> */}
       <div>
         <button type="submit" disabled={submitting}>
           Submit
