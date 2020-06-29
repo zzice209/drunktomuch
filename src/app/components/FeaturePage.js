@@ -70,12 +70,12 @@ const FeaturePage = () => {
     } else if (statusIncome === "outcome" && e.charCode === 13) {
       setTotalIncome(totalIncome - income);
       setIncome("");
-      data.push({
-        id: data.length + 1,
+      financialData.total.push({
+        id: financialData.total.length + 1,
         day: todayMoment,
-        items: {
-          paidFor: paidFor,
-          price: income
+        paidFor: paidFor,
+        price: {
+          value: income,
         }
       })
     }
@@ -86,21 +86,20 @@ const FeaturePage = () => {
       <div>DateTime {today.toString()}</div>
 			{/* <Moment format='DD/MM/YYYY'>{today}</Moment> */}
 
-			{data && data.map(item => (
+			{/* {data && data.map(item => (
 				<div key={item.id}>
-					{/* <span>{item.id} </span> */}
           <span>{item.day} </span>
 					<span>{item.items.paidFor} </span>
 					<span>{item.items.price} </span>
 				</div>
-			))}
+			))} */}
 
-      {/* {financialData &&
+      {financialData &&
         financialData.total.map(item => (
           <div key={item.id}>
-            <div> {item.paidFor} {item.price.formatedValue} </div>
+            <div> {item.day} {item.paidFor} {item.price.formatedValue} </div>
           </div>
-        ))} */}
+        ))}
 
       <div className="countdown-box">
         <Countdown date={newYear} />
