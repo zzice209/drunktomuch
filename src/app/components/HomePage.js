@@ -1,7 +1,16 @@
 import React from 'react';
+import AddToDo from './AddTodo';
+import TodoList from './TodoList';
 
-export default function HomePage() {
+
+const HomePage = (props) => {
     return (
-        <div>HomePage</div>
+        <div className="todo-app">
+            <h2>Todo List</h2>
+            <AddToDo />
+            <TodoList />
+        </div>
     )
 }
+
+export default HomePage;

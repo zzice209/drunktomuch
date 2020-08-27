@@ -20,6 +20,7 @@ import {
 import FeaturePage from '../../components/FeaturePage';
 import HomePage from '../../components/HomePage';
 import Routine from '../../components/Routine';
+import Hook from '../../components/HookPage';
 
 
 const drawerWidth = 240;
@@ -153,6 +154,9 @@ const DrawerGroup = () => {
                         </Route>
                         <Route path="/routine">
                             <Routine/>
+                        </Route>
+                        <Route path="/hook">
+                            <Hook/>
                         </Route>
                     </Switch>
                 </main>
