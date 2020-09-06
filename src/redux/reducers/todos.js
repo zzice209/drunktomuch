@@ -1,4 +1,4 @@
-import { ADD_TODO, FETCH_USERS_SUCCESS  } from '../actionTypes';
+import { ADD_TODO } from '../actionTypes';
 
 const initialState = {
     allIds: [],
@@ -19,11 +19,6 @@ export default function(state = initialState, action) {
                         completed: false
                     }
                 }
-            }
-        }
-        case FETCH_USERS_SUCCESS: {
-            return {
-                users: action.payload,
             }
         }
         default: {

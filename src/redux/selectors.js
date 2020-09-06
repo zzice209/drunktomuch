@@ -8,3 +8,6 @@ export const getTodoById = (store, id) =>
 
 export const getTodos = store =>
   getTodoList(store).map(id => getTodoById(store, id));
+
+export const getUsers = store => store.users.users;
+

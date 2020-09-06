@@ -1,13 +1,16 @@
 import React, {useEffect} from "react";
 import { connect } from "react-redux";
-import { getTodos } from "../../redux/selectors";
+import { getTodos, getUsers } from "../../redux/selectors";
 import { fetchUsers } from "../../redux/actions";
 
-const TodoList = ({ todos, fetchUsers }) => {
+const TodoList = ({ todos, users, fetchUsers }) => {
+  
   useEffect(() => {
-    fetchUsers()
-  }, [fetchUsers])
+    fetchUsers();
+  }, [fetchUsers])  
+
   return (
+    <div>
     <ul className="todo-list">
       {todos && todos.length
         ? todos.map((todo, index) => {
@@ -15,14 +18,22 @@ const TodoList = ({ todos, fetchUsers }) => {
           })
         : "No todos, yay!"}
     </ul>
+    <ul className="users-list">
+       {users && users.length 
+          ? users.map((user, index) => {
+            return <li key={index}>{user.name}</li>;
+          }): "No users, heehee"}
+    </ul>
+    </div>
   );
 };
 
 const mapStateToProps = state => {
-  const todos = state.todos;
-  // const todos = getTodos(state);
-  console.log(state)
-  return { todos }; 
+  const todos = getTodos(state);
+  console.log(todos)
+  const users = getUsers(state);
+  console.log(users);
+  return {todos, users}; 
 };
 
 const mapDispatchToProps = dispatch => {

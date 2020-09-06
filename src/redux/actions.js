@@ -1,16 +1,9 @@
-import { ADD_TODO, FETCH_USERS_SUCCESS } from './actionTypes';
-// import { fetchUserSuccess } from "./reducers/todos";
+import { ADD_TODO } from './actionTypes';
+import { FETCH_USERS_SUCCESS  } from './actionTypes';
+
 import axios from "axios";
 
 let nextTodoId = 0;
-
-const fetchUserSuccess = users => {
-    return {
-        type: FETCH_USERS_SUCCESS,
-        payload: users
-    }
-}
-
 
 export const addTodo = content => ({
     type: ADD_TODO,
@@ -20,12 +13,12 @@ export const addTodo = content => ({
     }
 })
 
-// export const fetchUserSuccess = users => {
-//     return {
-//         type: FETCH_USERS_SUCCESS,
-//         payload: users
-//     }
-// }
+export const fetchUserSuccess = users => {
+    return {
+        type: FETCH_USERS_SUCCESS,
+        payload: users
+    }
+}
 
 export const fetchUsers = () => {
     return (dispatch) => {
